@@ -1,7 +1,7 @@
 from character_interface import CharachterInterface
 
 
-class Character:
+class Character(CharachterInterface):
   def __init__(self, name, specy, weight, height, hp):
       self.name = name
       self.specy = specy
@@ -26,7 +26,7 @@ class Character:
     return self.__hp
 
   def set_hp(self, damage):
-    self.hp -= damage
+    self.__hp -= damage
 
   def speak(self):
     return "I speak!"
