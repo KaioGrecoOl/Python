@@ -10,3 +10,6 @@ class Sith(Character):
   def __init__(self, name, specy, weight, height, hp):
       super().__init__(name, specy, weight, height, hp)
       self.lightsaber = "Red lightsaber"
+
+  def attack(self, character):
+    character.set_hp(10)
