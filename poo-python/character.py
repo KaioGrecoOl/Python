@@ -9,13 +9,20 @@ class Character:
   def get_weight(self):
     return self.__weight
 
+  def set_weight(self, new_weight):
+    self.__weight = new_weight
+
   def get_height(self):
-    return self.height
-  
-  def get_weight(self):
-    return self.__weight
+    return self.__height
+
+  def set_height(self, new_height):
+    self.__height = new_height
+
 
   def get_hp(self):
     return self.__hp
+
+  def set_hp(self, damage):
+    self.hp -= damage
 
   
