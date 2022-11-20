@@ -4,9 +4,10 @@ import re
 
 url = urlopen("https://pythonscraping.com/pages/page3.html")
 bs = BeautifulSoup(url, 'html.parser')
-images = bs.find_all('img', {'src':re.compile('\.\.\/img\/gifts/img.*\.jpg')})
+images = bs.find_all(lambda tag: len(tag.attrs) == 2)
+
 for image in images: 
-    print(image['src'])
+    print(image)
 
 
 # for child in bs.find('table',{'id':'giftList'}).children:
