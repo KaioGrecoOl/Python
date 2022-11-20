@@ -1,12 +1,13 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import re
 
 url = urlopen("https://pythonscraping.com/pages/page3.html")
 bs = BeautifulSoup(url, 'html.parser')
+images = bs.find_all('img', {'src':re.compile('\.\.\/img\/gifts/img.*\.jpg')})
+for image in images: 
+    print(image['src'])
 
-print(bs.find('img',
-              {'src':'../img/gifts/img1.jpg'})
-      .parent.previous_sibling.get_text())
 
 # for child in bs.find('table',{'id':'giftList'}).children:
 #     print(child)
